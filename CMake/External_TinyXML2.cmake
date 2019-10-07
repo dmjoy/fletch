@@ -1,6 +1,6 @@
 
 # TinyXML must be static on Windows since they provide no exports
-if (WIN32)
+if (WIN32 OR (NOT ${BUILD_SHARED_LIBS}))
   set(tinyxml2_build_shared FALSE)
 else()
   set(tinyxml2_build_shared TRUE)
