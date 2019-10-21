@@ -5,8 +5,6 @@ else()
   message(FATAL_ERROR "YAMLcpp requires the Boost library.")
 endif()
 
-set(YAML_CPP_BUILD_WITH_FPIC OFF)
-
 # YAMLcpp has some sort of odd build error (with clang, at least)
 # if you build the tools.
 
@@ -26,7 +24,7 @@ ExternalProject_Add(YAMLcpp
     -DBOOST_ROOT:PATH=${BOOST_ROOT}
     -DYAML_CPP_BUILD_CONTRIB:BOOL=OFF
     -DYAML_CPP_BUILD_TOOLS:BOOL=OFF
-    -DYAML_CPP_BUILD_WITH_FPIC:BOOL=${YAML_CPP_BUILD_WITH_FPIC}
+    -DYAML_CPP_BUILD_WITH_FPIC:BOOL=ON
 )
 
 fletch_external_project_force_install(PACKAGE YAMLcpp)
