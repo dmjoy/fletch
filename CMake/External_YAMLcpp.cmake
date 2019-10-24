@@ -24,7 +24,6 @@ ExternalProject_Add(YAMLcpp
     -DBOOST_ROOT:PATH=${BOOST_ROOT}
     -DYAML_CPP_BUILD_CONTRIB:BOOL=OFF
     -DYAML_CPP_BUILD_TOOLS:BOOL=OFF
-    -DPOSITION_INDEPENDENT_CODE:BOOL=ON
 )
 
 fletch_external_project_force_install(PACKAGE YAMLcpp)
